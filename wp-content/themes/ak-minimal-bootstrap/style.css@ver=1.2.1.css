@@ -1,0 +1,76 @@
+/*
+Theme Name: AK Minimal Bootstrap
+Theme URI: https://example.com/ak-minimal-bootstrap
+Author: Ankush Kumar
+Author URI: https://example.com
+Description: Minimal Bootstrap 5 starter theme with WooCommerce support and full-width Cart / Checkout / Single Product layouts.
+Version: 1.2.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ak-minimal-bs
+Tags: bootstrap, blog, two-columns, right-sidebar, custom-menu, featured-images, accessibility-ready
+*/
+
+/* Basic Reset */
+* { box-sizing: border-box; }
+html { line-height: 1.5; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; color: #111; background: #fff; }
+
+/* Layout */
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 1rem; }
+.site-main { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+
+/* Make gallery and summary full width on single product */
+.woocommerce div.product div.images,
+.woocommerce div.product div.summary {
+  float: none;
+  width: 100%;
+  max-width: none;
+  clear: both;
+}
+body.full-width-product .site-sidebar,
+body.full-width-cart .site-sidebar,
+body.full-width-checkout .site-sidebar {
+    display: none;
+}
+body.full-width-product .site-content,
+body.full-width-cart .site-content,
+body.full-width-checkout .site-content {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Ensure WooCommerce cart/checkout containers expand */
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce {
+  width: 100%;
+}
+
+/* Ensure gallery images don't overflow */
+.woocommerce-product-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 980px) {
+  .site-main { grid-template-columns: 2fr 1fr; }
+}
+a { color: #0a66c2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Posts */
+.entry { margin-bottom: 2.5rem; }
+.entry-title { margin: 0 0 .5rem; font-size: 1.5rem; }
+.entry-meta { color: #777; font-size: .9rem; margin-bottom: .75rem; }
+.entry-content { line-height: 1.7; }
+.wp-post-image { max-width: 100%; height: auto; border-radius: .5rem; }
+
+/* Widgets */
+.widget { margin-bottom: 2rem; }
+.widget-title { font-size: 1.1rem; margin-bottom: .75rem; border-bottom: 1px solid #eee; padding-bottom: .25rem; }
+
+/* Footer */
+.site-footer { border-top: 1px solid #111; }
+footer { width: 100%; display: block; }
+.text-orange { color: #E3E810 !important; }
+.lb-15 { padding-left: 15px; }

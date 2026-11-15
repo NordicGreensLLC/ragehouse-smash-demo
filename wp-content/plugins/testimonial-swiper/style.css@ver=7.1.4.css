@@ -1,0 +1,127 @@
+/* Center swiper-slide content */
+.testimonial-swiper {
+  position: relative;
+  padding-bottom: 50px; /* Add space for pagination below the slide */
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px; /* distance from bottom */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Style numeric bullets */
+.swiper-pagination-bullet {
+  background: transparent;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 6px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.swiper-pagination-bullet-active {
+    color: #000;
+    background: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    opacity: 1;
+    transform: scale(1.1);
+    top: -43px;
+    position: relative;
+}
+
+
+.swiper.testimonial-swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch; /* Make all slides equal height */
+}
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+	display: none;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: #fff;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+	height: 100%; /* Ensure full height */
+}
+/* Ensure testimonial cards are centered and full height inside slide */
+.testimonial-card {
+	width: 685px;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	background: #fff;
+	padding: 43px 21px;
+	height: auto;
+    min-height: 250px; /* Optional: set a minimum height */
+}
+
+/* Restore numbered lists inside testimonial descriptions */
+.testimonial-inner ol {
+  list-style-type: decimal !important;
+  list-style-position: outside;
+  padding-left: 1.25em;
+  margin: 1em 0;
+}
+
+.testimonial-inner ol li {
+  display: list-item;
+  margin-bottom: 0.75em; /* space between items */
+}
+
+/* Remove extra space after the last item */
+
+.testimonial-inner ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* If the theme is stripping list numbers, force markers back on */
+.testimonial-inner ol,
+.testimonial-inner ol li {
+  list-style: decimal !important;
+}
+
+/* Force the number itself to render even if the theme hides markers */
+.testimonial-inner ol li::marker {
+  content: counter(list-item) ". ";
+  font-weight: 600;
+  color: inherit;
+}
+
+.testimonial-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+	margin: auto;
+}
+@media screen and (max-width: 480px) {
+  .testimonial-card {
+    height: auto !important; /* ✅ Let height be dynamic */
+    padding: 30px 15px;
+  }
+}
